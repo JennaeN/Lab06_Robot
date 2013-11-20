@@ -49,68 +49,68 @@ int main(void) {
 
 	while(1){
 
-//		motion(1, 100000);
-//		__delay_cycles(100000);
-//		motion(2, 100000);
-//		__delay_cycles(100000);
-//		motion(3, 50000);
-//		__delay_cycles(50000);
-//		motion(3, 100000);
-//		__delay_cycles(100000);
-//		motion(4, 50000);
-//		__delay_cycles(100000);
-//		motion(4, 100000);
-//		__delay_cycles(50000);
-
-
-		//to move forward - working!
-		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 |= OUTMOD_5;			//set to Reset
-		TA1CCTL1 |= OUTMOD_7;
-		TA1CCTL0 |= OUTMOD_5;
-
-
+		motion(1);
 		__delay_cycles(1000000);
-
-		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
-		TA1CCTL1 &= ~OUTMOD_7;
-		TA1CCTL0 &= ~OUTMOD_7;
-
-		//to move backward - working!
-		TA0CCTL1 |= OUTMOD_5;		//set to reset
-		TA0CCTL0 |= OUTMOD_4;		//set to toggle
-		TA1CCTL1 |= OUTMOD_5;		//set to reset
-		TA1CCTL0 |= OUTMOD_4;		//set to toggle
-
-
+		motion(2);
 		__delay_cycles(1000000);
+		motion(3);
+		__delay_cycles(250000);
+		motion(4);
+		__delay_cycles(250000);
+		motion(3);
+		__delay_cycles(500000);
+		motion(4);
+		__delay_cycles(500000);
 
-		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
-		TA1CCTL1 &= ~OUTMOD_7;
-		TA1CCTL0 &= ~OUTMOD_7;
 
-		//to move left
-		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 |= OUTMOD_5;			//set to Reset
-		TA1CCTL1 |= OUTMOD_5;
-		TA1CCTL0 |= OUTMOD_7;
-
-		__delay_cycles(1000000);
-
-		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
-		TA1CCTL1 &= ~OUTMOD_7;
-		TA1CCTL0 &= ~OUTMOD_7;
-
-		//to move right
-		TA0CCTL1 |= OUTMOD_5;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 |= OUTMOD_7;			//set to Reset
-		TA1CCTL1 |= OUTMOD_7;
-		TA1CCTL0 |= OUTMOD_5;
-
-		__delay_cycles(1000000);
+//		//to move forward - working!
+//		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 |= OUTMOD_5;			//set to Reset
+//		TA1CCTL1 |= OUTMOD_7;
+//		TA1CCTL0 |= OUTMOD_5;
+//
+//
+//		__delay_cycles(1000000);
+//
+//		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
+//		TA1CCTL1 &= ~OUTMOD_7;
+//		TA1CCTL0 &= ~OUTMOD_7;
+//
+//		//to move backward - working!
+//		TA0CCTL1 |= OUTMOD_5;		//set to reset
+//		TA0CCTL0 |= OUTMOD_4;		//set to toggle
+//		TA1CCTL1 |= OUTMOD_5;		//set to reset
+//		TA1CCTL0 |= OUTMOD_4;		//set to toggle
+//
+//
+//		__delay_cycles(1000000);
+//
+//		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
+//		TA1CCTL1 &= ~OUTMOD_7;
+//		TA1CCTL0 &= ~OUTMOD_7;
+//
+//		//to move left
+//		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 |= OUTMOD_5;			//set to Reset
+//		TA1CCTL1 |= OUTMOD_5;
+//		TA1CCTL0 |= OUTMOD_7;
+//
+//		__delay_cycles(1000000);
+//
+//		TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
+//		TA1CCTL1 &= ~OUTMOD_7;
+//		TA1CCTL0 &= ~OUTMOD_7;
+//
+//		//to move right
+//		TA0CCTL1 |= OUTMOD_5;        // set TACCTL1 to Reset / Set mode
+//		TA0CCTL0 |= OUTMOD_7;			//set to Reset
+//		TA1CCTL1 |= OUTMOD_7;
+//		TA1CCTL0 |= OUTMOD_5;
+//
+//		__delay_cycles(1000000);
 	}
 	return 0;
 }

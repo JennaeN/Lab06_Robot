@@ -11,7 +11,7 @@
 //
 // motion() sets the motors so that the robot will move in the specified direction for the specified length of time
 //
-void motion(int direction, int time);
+void motion(int direction);
 
 
 #endif /* ROBOT_H_ */

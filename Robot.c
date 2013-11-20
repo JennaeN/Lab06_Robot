@@ -8,25 +8,45 @@
 
 
 
-void motion(int direction, int time){
+void motion(int direction){
 
+	TA0CCTL1 &= ~OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+	TA0CCTL0 &= ~OUTMOD_7;			//set to Reset
+	TA1CCTL1 &= ~OUTMOD_7;
+	TA1CCTL0 &= ~OUTMOD_7;
 
 	if(direction == 1){
-
+		//to move forward - working!
+		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL0 |= OUTMOD_5;			//set to Reset
+		TA1CCTL1 |= OUTMOD_7;
+		TA1CCTL0 |= OUTMOD_5;
 
 
 	}
 
-	if (direction == 2){
-
+	else if (direction == 2){
+		//to move backward - working!
+		TA0CCTL1 |= OUTMOD_5;		//set to reset
+		TA0CCTL0 |= OUTMOD_4;		//set to toggle
+		TA1CCTL1 |= OUTMOD_5;		//set to reset
+		TA1CCTL0 |= OUTMOD_4;		//set to toggle
 
 	}
 
-	if (direction == 3){
-
+	else if (direction == 3){
+		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL0 |= OUTMOD_5;			//set to Reset
+		TA1CCTL1 |= OUTMOD_5;
+		TA1CCTL0 |= OUTMOD_7;
 	}
 
-	if (direction == 4){
+	else{
+		//to move right
+		TA0CCTL1 |= OUTMOD_5;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL0 |= OUTMOD_7;			//set to Reset
+		TA1CCTL1 |= OUTMOD_7;
+		TA1CCTL0 |= OUTMOD_5;
 
 	}
 
