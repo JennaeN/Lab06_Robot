@@ -18,10 +18,10 @@ void motion(int direction, int time) {
 
 	if (direction == 1) {
 		//to move forward
-		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL1 |= OUTMOD_7;         // set to Reset / Set mode
 		TA0CCTL0 |= OUTMOD_5;			//set to Reset
-		TA1CCTL1 |= OUTMOD_7;
-		TA1CCTL0 |= OUTMOD_5;
+		TA1CCTL1 |= OUTMOD_7;			// set to Reset / Set mode
+		TA1CCTL0 |= OUTMOD_5;			//set to Reset
 
 	}
 
@@ -36,18 +36,18 @@ void motion(int direction, int time) {
 
 	else if (direction == 3) {
 		//to move left
-		TA0CCTL1 |= OUTMOD_7;        // set TACCTL1 to Reset / Set mode
+		TA0CCTL1 |= OUTMOD_7;         // set to Reset / Set mode
 		TA0CCTL0 |= OUTMOD_5;			//set to Reset
-		TA1CCTL1 |= OUTMOD_5;
-		TA1CCTL0 |= OUTMOD_4;
+		TA1CCTL1 |= OUTMOD_5;			//set to Reset
+		TA1CCTL0 |= OUTMOD_4;			//set to Toggle
 	}
 
 	else {
 		//to move right
-		TA0CCTL1 |= OUTMOD_5;        // set TACCTL1 to Reset / Set mode
-		TA0CCTL0 |= OUTMOD_4;			//set to Reset
-		TA1CCTL1 |= OUTMOD_7;
-		TA1CCTL0 |= OUTMOD_5;
+		TA0CCTL1 |= OUTMOD_5;         // set to Reset
+		TA0CCTL0 |= OUTMOD_4;			//set to Toggle
+		TA1CCTL1 |= OUTMOD_7;			// set to Reset / Set mode
+		TA1CCTL0 |= OUTMOD_5;			// set to Reset
 
 	}
 
